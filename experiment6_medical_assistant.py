@@ -1,4 +1,3 @@
-# ---- Common Helper Program (from ollama_helper.py) ----
 import requests
 
 def ask_ollama(prompt):
@@ -15,7 +14,6 @@ def ask_ollama(prompt):
 
     return response.json()["response"]
 
-# ---- Experiment program ----
 print("AI-POWERED MEDICAL INFORMATION ASSISTANT")
 
 with open("health_info.txt", "r", encoding="utf-8") as file:

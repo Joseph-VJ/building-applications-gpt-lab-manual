@@ -1,4 +1,3 @@
-# ---- Common Helper Program (from ollama_helper.py) ----
 import requests
 
 def ask_ollama(prompt):
@@ -15,7 +14,6 @@ def ask_ollama(prompt):
 
     return response.json()["response"]
 
-# ---- Experiment program ----
 print("AI BLOG CONTENT GENERATOR")
 
 topic = input("Enter blog topic: ")

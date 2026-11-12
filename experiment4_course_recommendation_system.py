@@ -1,6 +1,4 @@
-# ---- Common Helper Program (from ollama_helper.py) ----
 import requests
-import csv
 
 def ask_ollama(prompt):
     url = "http://localhost:11434/api/generate"
@@ -16,7 +14,8 @@ def ask_ollama(prompt):
 
     return response.json()["response"]
 
-# ---- Experiment program ----
+import csv
+
 courses = []
 with open("courses.csv", "r", encoding="utf-8") as file:
     reader = csv.DictReader(file)
