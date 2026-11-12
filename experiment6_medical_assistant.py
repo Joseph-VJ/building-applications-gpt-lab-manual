@@ -1,5 +1,21 @@
-from ollama_helper import ask_ollama
+# ---- Common Helper Program (from ollama_helper.py) ----
+import requests
 
+def ask_ollama(prompt):
+    url = "http://localhost:11434/api/generate"
+
+    data = {
+        "model": "llama3.2",
+        "prompt": prompt,
+        "stream": False
+    }
+
+    response = requests.post(url, json=data, timeout=180)
+    response.raise_for_status()
+
+    return response.json()["response"]
+
+# ---- Experiment program ----
 print("AI-POWERED MEDICAL INFORMATION ASSISTANT")
 
 with open("health_info.txt", "r", encoding="utf-8") as file:
